@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+}
+#lightAquaDiv{
+    height:450px;
+    width:100%;
+    background-color: #02577a;
+    color: #F2F2F2;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#lightAquaDiv h2{
+    padding-top: 40px;
+}
+#listaTrending{
+    margin-top: 40px;
+    list-style:none;
+    display:flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+#trendingPhoto1{
+    height: 150%;
+    width: 90%;
+    border:2px solid #436c70;
+    border-radius: 50%;
+}
+#trendingPhoto2{
+    height: 150%;
+    width: 90%;
+    border:2px solid #436c70;
+    border-radius: 50%;
+}
+#trendingPhoto3{
+    height: 150%;
+    width: 90%;
+    border:2px solid #436c70;
+    border-radius: 50%;
+}
+#trendingPhoto4{
+    height: 150%;
+    width: 90%;
+    border:2px solid #436c70;
+    border-radius: 50%;
+}
+#darkAquaDiv{
+    height:450px;
+    width:100%;
+    background-color:#0384c0;
+    color: #F2F2F2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom:2px solid #436c70;
+    text-align: center;
+}
+#darkAquaDiv h2{
+    padding-top: 40px;
+}
+#topBrands{
+    background-color:#006ba08c;
+    width: 75%;
+    height: 59.5%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 3%;
+}
+#companyList{
+    width: auto;
+    margin-top: 3.75%;
+    display:flex;
+    justify-content:center;
+    justify-content:space-evenly;
+    list-style: none;
+}
+#company1{
+    border-radius: 50px;
+    height: 84.3%;
+    width: 100%;
+    margin-top: 11%;
+}
+#company2{
+    border-radius: 50px;
+    height: 250px;
+    width: 100%;
+    margin-top: 3.33%;
+}
+#company3{
+    border-radius: 50px;
+    height: 84.3%;
+    width: 100%;
+    margin-top: 11%;
+}
+#slideBack{
+    display: flex;
+    background-color: transparent;
+    color:#bce8fd;
+    font-size: 500%;
+    border-radius: 50%;
+    border: none;
+    font-family: initial;
+    align-items: center;
+    flex-shrink: 1;
+}
+#slideForward{
+    display: flex;
+    background-color: transparent;
+    color:#bce8fd;
+    font-size: 500%;
+    border-radius: 50%;
+    border: none;
+    font-family: initial;
+    align-items: center;
+    flex-shrink: 1;
+}
+#slideBack:hover, #slideForward:hover{
+    cursor: pointer;
+}
