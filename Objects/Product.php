@@ -1,5 +1,4 @@
 <?php
-
 class Produkti{
     public $productID;
     public $productLink;
