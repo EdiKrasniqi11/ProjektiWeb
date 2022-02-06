@@ -1,5 +1,5 @@
 <?php include '../config.php'?>
-<?php require_once '../product/product.php'?>
+<?php require_once '../Objects/product.php'?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,15 +22,10 @@
         </div>
         <div id="rightSide">
             <?php
-                $produkti1 = new Produkti("../ProductPage/beats.php", "../Images/Headphones.jpg", "Beats by Dre", "Description 1", "200.00");
+                $produkti1 = new Produkti("1", "../ProductPage/beats.php", "../Images/Headphones.jpg", "Beats by Dre", "Description 1", "200.00", "Phones");
                 echo $produkti1;
-                echo $produkti1;
-                echo $produkti1;
-                echo $produkti1;
-                echo $produkti1;
-                echo $produkti1;
-                echo $produkti1;
-                echo $produkti1;
+                $produkti2 = new Produkti("2", "../ProductPage/ps5.php", "../Images/PS5.jpg", "Playstation 5", "Description 2", "500.00", "Gaming");
+                echo $produkti2;
             ?>
         </div>
     </div>

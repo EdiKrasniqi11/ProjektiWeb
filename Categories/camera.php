@@ -1,5 +1,5 @@
 <?php include '../config.php' ?>
-<?php require_once '../product/product.php'?>
+<?php require_once '../Objects/product.php'?>
 <!DOCTYPE html>
 <html>
 <head>

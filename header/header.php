@@ -65,7 +65,7 @@
 </style>
 <div name="header" id="header">
     <div id="logoDiv">
-        <a href="..\HomePage\home.php">
+        <a href="..\HomePage\index.php">
             <img src="..\Images\Logo.PNG" alt="image not found" id="logo1" height="50px" width="50px">
             <h2>ProjektiWeb</h2>
         </a>
@@ -75,6 +75,7 @@
         <a href="..\Cart\cart.php" id="button">Cart</a>
         <a href="..\Wishlist\wishlist.php" id="button">Wishlist</a>
         <a href="..\Login\login.php" id="button">Login/Register</a>
+        <a href="..\Dashboard\dashboard.php" id="button">Dashboard</a>
         <input type="text" id="search" placeholder="Search">
     </div>
 </div>
