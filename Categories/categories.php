@@ -29,6 +29,7 @@
             ?>
         </div>
     </div>
-<?php include '../footer/footer.php'?>
+    <?php include '../footer/footer.php'?>
+    <script src="main.js"></script>
 </body>
 </html>

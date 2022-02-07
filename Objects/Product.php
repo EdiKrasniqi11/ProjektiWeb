@@ -17,14 +17,15 @@ class Produkti{
         $this->price=$price;
         $this->category=$category;
     }
+
     public function __toString(){
         return "<div id=\"product\">
                     <a href=".$this->productLink."><img src=".$this->imageLink." ></a>
-                    <div id=\"prodCart\">
-                    <img src=\"../Images/favProd.png\" id=\"Wish\" onclick=\"hearted()\">
-                    <img src=\"../Images/cartProd.png\" id=\"Cart\" onclick=\"carted()\">
-                    </div>
-                    <a href=".$this->productLink."><div id=\"prodDesc\">
+                    <div id=\"prodDesc\">
+                        <div id=\"prodCart\">
+                        <img src=\"../Images/favProd.png\" class=\"Wish\" onclick=\"function{}\">
+                        <img src=\"../Images/cartProd.png\" class=\"Cart\" onclick=\"carted()\">
+                        </div><a href=".$this->productLink.">
                         <h4>$this->productName</h3>
                         <h5>$this->price$</h4>
                     </div></a>

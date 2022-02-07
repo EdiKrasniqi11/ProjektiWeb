@@ -1,22 +1,26 @@
-var wishIndex=0;
-var cartIndex=0;
-function hearted(){
-    var heart = document.getElementById('Wish"<.$this->productName."');
-    if(wishIndex === 0){
-        heart.src = "../Images/favFillProd.png"
-        wishIndex++;
-    }else{
-        heart.src = "../Images/favProd.png"
-        wishIndex=0;
-    }
+var wishProducts = document.getElementsByClassName('Wish');
+var cartProducts = document.getElementsByClassName('Cart');
+var wishIndex = 0;
+var cartIndex = 0;
+for(let i=0;i<wishProducts.length;i++){
+    wishProducts[i].addEventListener("click", function(){
+        if(wishIndex === 0){
+            wishProducts[i].src = "../Images/favFillProd.png";
+            wishIndex ++;
+        }else{
+            wishProducts[i].src = "../Images/favProd.png";
+            wishIndex = 0;
+        }
+    });
 }
-function carted(){
-    var cart = document.getElementById('Cart".$this->productName."')
-    if(cartIndex == 0){
-        cart.src = "../Images/cartFillProd.png"
-        cartIndex++;
-    }else{
-        cart.src = "../Images/cartProd.png"
-        cartIndex=0;
-    }
+for(let i=0;i<cartProducts.length;i++){
+    cartProducts[i].addEventListener("click", function(){
+        if(wishIndex === 0){
+            cartProducts[i].src = "../Images/cartFillProd.png";
+            wishIndex ++;
+        }else{
+            cartProducts[i].src = "../Images/cartProd.png";
+            wishIndex = 0;
+        }
+    });
 }

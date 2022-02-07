@@ -22,11 +22,12 @@
         </div>
         <div id="rightSide">    
             <?php
-                $produkti1 = new Produkti("../ProductPage/beats.php", "../Images/Headphones.jpg", "Beats by Dre", "Description 1", "200.00", "Phones");
+                $produkti1 = new Produkti("1", "../ProductPage/beats.php", "../Images/Headphones.jpg", "Beats by Dre", "Description 1", "200.00", "Phones");
                 echo $produkti1;
             ?>
         </div>
     </div>
     <?php include '../footer/footer.php'?>
+    <script src="main.js"></script>
 </body>
 </html>
