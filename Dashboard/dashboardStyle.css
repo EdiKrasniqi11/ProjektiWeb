@@ -63,3 +63,11 @@ table td{
     background-color: #01303f;
     color: #F2F2F2;
 }
+#editButton{
+    text-decoration: none;
+    color: rgb(16, 156, 16);
+}
+#deleteButton{
+    text-decoration: none;
+    color: rgb(253, 0, 0);
+}

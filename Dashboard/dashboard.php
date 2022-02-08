@@ -1,4 +1,9 @@
 <?php include '../config.php'?>
+<?php require_once ('../Objects/UserController.php');
+$users = new UserController;
+$allUsers = $users->readData()
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +21,18 @@
         </div>
         <div id="rightSide">
             <table>
-                <tr><td colspan="4" id="userHeader">Users Table</td></tr>
-                <tr><th>User_ID</th><th>User_Name</th><th>User_Password</th><th>User_BirthDate</th></tr>
-                <tr><td>1</td><td>Edi Krasniqi</td><td>Password1</td><td>07.01.2003</td><tr>
-                <tr><td>2</td><td>Edi Krasniqi</td><td>Password2</td><td>07.01.2003</td><tr>
+                <tr><td colspan="9" id="userHeader">Users Table</td></tr>
+                <tr><th>User_Name</th><th>User_Birthday</th><th>User_Gender</th><th>User_Email</th><th>User_Password</th><th>User_Role</th></tr>
+                <?php foreach($allUsers as $user):?><tr>
+                <td><?php echo $user['userName']." ".$user['userSurname'];?></td>
+                <td><?php echo $user['userDay']."/".$user['userMonth']."/".$user['userYear'];?></td>
+                <td><?php echo $user['userGender'];?></td>
+                <td><?php echo $user['userEmail'];?></td>
+                <td><?php echo $user['userPassword'];?></td>
+                <td><?php echo $user['userRole'];?> </td>
+                <td><a href="editUser.php?id=<?php echo $user['userEmail'];?>" id="editButton">Edit</a></td>
+                <td><a href="deleteUser.php?email=<?php echo $user['userEmail'];?>" id="deleteButton">Delete</a></td>
+                </tr><?php endforeach ?>
             </table>
             <table id="productTable">
                 <tr><td colspan="4" id="productHeader">Product Table</td></tr>

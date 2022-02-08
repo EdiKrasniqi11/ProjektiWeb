@@ -1,26 +1,29 @@
 <?php include '../config.php' ?>
 <?php
 require_once '../Objects/UserController.php';
-
+if(isset($_GET['id'])){
+    $userEmail = $_GET['id'];
+}
 $user = new UserController;
+$currentUser = $user->edit($userEmail);
 if(isset($_POST['submit'])){
-    $user->insert($_POST);
+    $user->update($_POST,$userEmail);
 }?>
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="registerStyle.css?v=<?=$version?>">
+    <link rel="stylesheet" type="text/css" href="editUserStyle.css?v=<?=$version?>">
 </head>
 <body>
     <?php include '../header/header.php'?>
     <div id="mainPage">
     <div id="korniza">
         <form class="box" method="POST">
-            <h1>Register</h1>
+            <h1>Edit</h1>
 
             <div class="nameClass">
-                <input type="text" required autocomplete="off" id="emri" name="userName" placeholder="Name">
-                <input type="text" required autocomplete="off" id="mbiemri" name="userSurname" placeholder="Surname">
+                <input type="text" required autocomplete="off" id="emri" name="userName" placeholder="Name" value="<?php echo $currentUser['userName']?>">
+                <input type="text" required autocomplete="off" id="mbiemri" name="userSurname" placeholder="Surname" value="<?php echo $currentUser['userSurname']?>">
             </div>
             <div class="datelindja">
                 <select id="dita" name="userDay">
@@ -163,12 +166,13 @@ if(isset($_POST['submit'])){
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
             </select>
-            <input type="email" required autocomplete="off" id="email" name="userEmail" placeholder="E-mail">
-            <input type="password" required autocomplete="off" id="password" name="userPassword" placeholder="Password">
-            <input type="password" required autocomplete="off" id="confirmPassword" name="userConfirm" placeholder="Confirm Password">
-            <p id="showId" onclick="showPass()">Show Password</p>
-            <button type="submit" name="submit" id="loginButton" onclick="return validimi()">
-                    <div><b>Register</b></div>
+            <input type="text" required autocomplete="off" id="password" name="userPassword" placeholder="Password" value="<?php echo $currentUser['userPassword']?>">
+            <select name="userRole" id="role">
+                <option value="0">Costumer</option>
+                <option value="1">Admin</option>
+            </select>
+            <button type="submit" name="submit" id="loginButton">
+                    <div><b>Update</b></div>
             </button>
         </form>
     </div>
