@@ -37,8 +37,8 @@
             return $query->fetch();
         }
         public function update($request, $userEmail){
-            $query = $this->db->pdo->prepare('UPDATE user SET userName = :userName, userSurname = :userSurname, userDay = :userDay, userMonth = :userMonth, userYear = :userYear, userGender = :userGender, userPassword = :userPassword, userRole = :userRole WHERE userEmail = :userEmail');
-
+            $query = $this->db->pdo->prepare('UPDATE user SET userName=:userName, userSurname=:userSurname, userDay=:userDay, userMonth=:userMonth, userYear=:userYear, userGender=:userGender, userPassword=:userPassword, userRole=:userRole WHERE userEmail=:userEmail');
+            $query->bindParam(':userName', $request['userName']);
             $query->bindParam(':userSurname', $request['userSurname']);
             $query->bindParam(':userDay', $request['userDay']);
             $query->bindParam(':userMonth', $request['userMonth']);
@@ -47,15 +47,14 @@
             $query->bindParam(':userEmail', $userEmail);
             $query->bindParam(':userPassword', $request['userPassword']);
             $query->bindParam(':userRole', $request['userRole']);
-            
             $query->execute();
+            header("Location:dashboard.php");
         }
         public function delete($userEmail){
             $query = $this->db->pdo->prepare('DELETE from user WHERE userEmail = :userEmail');
             $query->bindParam(':userEmail', $userEmail);
             $query->execute();
-    
-            return $query->fetch();
+            header("Location:dashboard.php");
         }
     }
 ?>

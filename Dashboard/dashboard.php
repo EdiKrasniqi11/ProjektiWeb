@@ -31,7 +31,7 @@ $allUsers = $users->readData()
                 <td><?php echo $user['userPassword'];?></td>
                 <td><?php echo $user['userRole'];?> </td>
                 <td><a href="editUser.php?id=<?php echo $user['userEmail'];?>" id="editButton">Edit</a></td>
-                <td><a href="deleteUser.php?email=<?php echo $user['userEmail'];?>" id="deleteButton">Delete</a></td>
+                <td><a href="deleteUser.php?id=<?php echo $user['userEmail'];?>" id="deleteButton">Delete</a></td>
                 </tr><?php endforeach ?>
             </table>
             <table id="productTable">
