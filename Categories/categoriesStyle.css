@@ -29,6 +29,7 @@
 }
 #categoryBar li{
     padding: 5%;
+    cursor: pointer;
 }
 #categoryBar li:hover{
     background-color: #b3b2b2;
@@ -37,7 +38,7 @@
     text-decoration: none;
     color: #01303f;
 }
-#product{
+.product{
     display:inline-block;
     vertical-align: top;
     height: calc(100vh * 0.4);
@@ -50,7 +51,7 @@
     box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px, rgb(0 0 0 / 6%) 0px 3px 3px -2px, rgb(0 0 0 / 10%) 0px 1px 8px 0px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-#product img{
+.product img{
     height: 80%;
     width: 100%;
 }

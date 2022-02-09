@@ -18,13 +18,13 @@ $allProducts = $produktet->readData();?>
     <div id="categMain">
         <div id="leftSide">
             <ul id="categoryBar" class="inlineBox">
-                <li><b>All</li>
-                <li>Users</li>
-                <li>Products</b></li>
+                <li onclick="showAll()"><b>All</li>
+                <li onclick="showUsers()">Users</li>
+                <li onclick="showProducts()">Products</b></li>
             </ul>
         </div>
         <div id="rightSide">
-            <table>
+            <table id="userTable">
                 <tr><td colspan="9" id="userHeader">Users Table</td></tr>
                 <tr><th>User_Name</th><th>User_Birthday</th><th>User_Gender</th><th>User_Email</th><th>User_Password</th><th>User_Role</th></tr>
                 <?php foreach($allUsers as $user){
@@ -47,5 +47,6 @@ $allProducts = $produktet->readData();?>
         </div>
     </div>
     <?php include '../footer/footer.php'?>
+    <script src="main.js"></script>
 </body>
 </html>

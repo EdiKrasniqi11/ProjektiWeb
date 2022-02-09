@@ -22,7 +22,7 @@ class Produkti{
     }
 
     public function __toString(){
-        return "<div id=\"product\">
+        return "<div class=\"product\" id=\"".$this->category."\">
                     <a href=".$this->productLink."><img src=".$this->imageLink." ></a>
                     <div id=\"prodDesc\">
                         <div id=\"prodCart\">

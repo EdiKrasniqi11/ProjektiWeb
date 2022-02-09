@@ -1,5 +1,9 @@
 <?php include '../config.php'?>
-<?php require_once '../Objects/Produkti.php'?>
+<?php require_once 'main.php';?>
+<?php require_once ('../Objects/Produkti.php')?>
+<?php require_once ('../Objects/ProduktiController.php');
+$produktet = new ProduktiController;
+$allProducts = $produktet->readData();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,25 +15,27 @@
     <div id="categMain">
         <div id="leftSide">
             <ul id="categoryBar" class="inlineBox">
-                <li><b><a href="categories.php">All</a></li>
-                <li><a href="phones.php">Phones</a></li>
-                <li><a href="computers.php">Computers</a></li>
-                <li><a href="television.php">Television</a></li>
-                <li><a href="gaming.php">Gaming</a></li>
-                <li><a href="smartHome.php">SmartHome</a></li>
-                <li><a href="camera.php">Camera & Video</a></li>
+                <li onclick="showAll()"><b>All</li>
+                <li onclick="showCategory(this)">Phones</li>
+                <li onclick="showCategory(this)">Computers</li>
+                <li onclick="showCategory(this)">Television</li>
+                <li onclick="showCategory(this)">Gaming</li>
+                <li onclick="showCategory(this)">Smart Home</li>
+                <li onclick="showCategory(this)">Camera</li>
             </ul>
         </div>
         <div id="rightSide">
             <?php
-                $produkti1 = new Produkti("1", "../ProductPage/beats.php", "../Images/Headphones.jpg", "Beats by Dre", "Description 1", "200.00", "Phones");
-                echo $produkti1;
-                $produkti2 = new Produkti("2", "../ProductPage/ps5.php", "../Images/PS5.jpg", "Playstation 5", "Description 2", "500.00", "Gaming");
-                echo $produkti2;
+                foreach($allProducts as $product){
+                    $produkti = new Produkti($product['productLink'], $product['imageLink'], $product['productName'], $product['productDescription'], $product['productPrice'], $product['category']);
+
+                    echo $produkti;
+                }
             ?>
         </div>
     </div>
     <?php include '../footer/footer.php'?>
-    <script src="main.js"></script>
+    <?php echo addToWish();?>
+    <?php echo categoryMenu();?>
 </body>
 </html>

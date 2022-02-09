@@ -32,6 +32,7 @@ class ProduktiController{
         return $query->fetch();
     }
     public function update($request, $productName){
+        $request['imageLink'] = '../Images/'.$request['imageLink'];
         $query = $this->db->pdo->prepare('UPDATE produkti SET productLink=:productLink, imageLink=:imageLink, productDescription=:productDescription, productPrice=:productPrice, category=:category WHERE productName=:productName');
         $query->bindParam(':productLink', $request['productLink']);
         $query->bindParam(':imageLink', $request['imageLink']);
