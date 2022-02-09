@@ -1,5 +1,5 @@
 <?php
-require_once 'MenuController.php';
+require_once '../Objects/UserController.php';
 
 $emri=$_POST['userName'];
 $mbiemri=$_POST['userSurname'];

@@ -178,6 +178,5 @@ if(isset($_POST['submit'])){
     </div>
 </div>
     <?php include '../footer/footer.php'?>
-    <script src="main.js"></script>
 </body>
 </html>

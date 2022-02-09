@@ -1,9 +1,12 @@
 <?php include '../config.php'?>
-<?php require_once ('../Objects/UserController.php');
+<?php require_once('../Objects/User.php');
+require_once ('../Objects/UserController.php');
 $users = new UserController;
-$allUsers = $users->readData()
-
-?>
+$allUsers = $users->readData();?>
+<?php require_once('../Objects/Produkti.php');
+require_once('../Objects/ProduktiController.php');
+$produktet = new ProduktiController;
+$allProducts = $produktet->readData();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +18,8 @@ $allUsers = $users->readData()
     <div id="categMain">
         <div id="leftSide">
             <ul id="categoryBar" class="inlineBox">
-                <li><b>Users</li>
+                <li><b>All</li>
+                <li>Users</li>
                 <li>Products</b></li>
             </ul>
         </div>
@@ -23,22 +27,22 @@ $allUsers = $users->readData()
             <table>
                 <tr><td colspan="9" id="userHeader">Users Table</td></tr>
                 <tr><th>User_Name</th><th>User_Birthday</th><th>User_Gender</th><th>User_Email</th><th>User_Password</th><th>User_Role</th></tr>
-                <?php foreach($allUsers as $user):?><tr>
-                <td><?php echo $user['userName']." ".$user['userSurname'];?></td>
-                <td><?php echo $user['userDay']."/".$user['userMonth']."/".$user['userYear'];?></td>
-                <td><?php echo $user['userGender'];?></td>
-                <td><?php echo $user['userEmail'];?></td>
-                <td><?php echo $user['userPassword'];?></td>
-                <td><?php echo $user['userRole'];?> </td>
-                <td><a href="editUser.php?id=<?php echo $user['userEmail'];?>" id="editButton">Edit</a></td>
-                <td><a href="deleteUser.php?id=<?php echo $user['userEmail'];?>" id="deleteButton">Delete</a></td>
-                </tr><?php endforeach ?>
+                <?php foreach($allUsers as $user){
+                    $userString = new User($user['userName'],$user['userSurname'],$user['userDay'],$user['userMonth'],$user['userYear'],$user['userGender'],$user['userEmail'],$user['userPassword'],$user['userRole']);
+
+                    echo $userString;
+                }?>
             </table>
             <table id="productTable">
-                <tr><td colspan="4" id="productHeader">Product Table</td></tr>
-                <tr><th>Product_ID</th><th>Product_Name</th><th>Product_Price</th><th>Product_Category</th></tr>
-                <tr><td>1</td><td>iPhone 13</td><td>1500.00$</td><td>Phones</td><tr>
-                <tr><td>2</td><td>MacBook Air</td><td>2000.00$</td><td>Computers</td><tr>
+                <tr><td colspan="6" id="productHeader">Product Table</td></tr>
+                <tr><th>Product_Name</th><th>Product_Price</th><th>Product_Category</th></tr>
+                <?php foreach($allProducts as $product){
+                    $productString = new Produkti($product['productLink'], $product['imageLink'], $product['productName'], $product['productDescription'], $product['productPrice'], $product['category']);
+                    
+                    echo $productString->writeProduct();
+                }
+                ?>
+                <tr><td colspan="6"><a href="../ProductManagement/createProduct.php" id="newProduct">+ Add New Product</a></td></tr>
             </table>
         </div>
     </div>

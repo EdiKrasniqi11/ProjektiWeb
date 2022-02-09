@@ -1,6 +1,5 @@
 <?php include '../config.php' ?>
-<?php
-require_once '../Objects/UserController.php';
+<?php require_once '../Objects/UserController.php';
 
 $user = new UserController;
 if(isset($_POST['submit'])){
