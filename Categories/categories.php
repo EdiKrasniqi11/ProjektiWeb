@@ -27,7 +27,7 @@ $allProducts = $produktet->readData();?>
         <div id="rightSide">
             <?php
                 foreach($allProducts as $product){
-                    $produkti = new Produkti($product['productLink'], $product['imageLink'], $product['productName'], $product['productDescription'], $product['productPrice'], $product['category']);
+                    $produkti = new Produkti($product['indicator'], $product['imageLink'], $product['productName'], $product['productDescription'], $product['productPrice'], $product['category']);
 
                     echo $produkti;
                 }

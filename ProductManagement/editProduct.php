@@ -20,7 +20,6 @@ if(isset($_POST['submit'])){
     <div id="korniza">
         <form class="box" method="POST">
             <h1><?php echo $currentProduct['productName']?></h1>
-            <input type="text" id="productLink" name="productLink" value="<?php echo $currentProduct['productLink']?>" placeholder="productLink">
             <input type="file" id="imageLink" name="imageLink" accept="image/*">
             <textarea name="productDescription" id="productDescription"><?php echo $currentProduct['productDescription']?></textarea>
             <div id="priceCategory">

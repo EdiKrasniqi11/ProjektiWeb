@@ -16,7 +16,6 @@ if(isset($_POST['submit'])){
     <div id="korniza">
         <form class="box" method="POST">
             <h1>New Product</h1>
-            <input type="text" id="productLink" name="productLink" placeholder="productLink">
             <input type="file" id="imageLink" name="imageLink" accept="image/*">
             <input type="text" id="productName" name="productName" placeholder="productName">
             <textarea name="productDescription" id="productDescription"></textarea>

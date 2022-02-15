@@ -11,6 +11,7 @@
     }
     #logoDiv{
         padding-left: 2%;
+        flex-shrink: 1;
     }
     #logoDiv a{
         text-decoration:none;

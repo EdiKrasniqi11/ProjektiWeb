@@ -11,10 +11,8 @@ class ProduktiController{
         return $query->fetchAll();
     }
     public function insert($request){
-        $request['productLink'] = '../ProductPage/'.$request['productLink'];
         $request['imageLink'] = '../Images/'.$request['imageLink'];
-        $query = $this->db->pdo->prepare('INSERT INTO produkti(productLink,imageLink,productName,productDescription,productPrice,category) VALUES (:productLink, :imageLink, :productName, :productDescription, :productPrice, :category)');
-        $query->bindParam(':productLink', $request['productLink']);
+        $query = $this->db->pdo->prepare('INSERT INTO produkti(imageLink,productName,productDescription,productPrice,category) VALUES (:imageLink, :productName, :productDescription, :productPrice, :category)');
         $query->bindParam(':imageLink', $request['imageLink']);
         $query->bindParam(':productName', $request['productName']);
         $query->bindParam(':productDescription', $request['productDescription']);
@@ -33,8 +31,7 @@ class ProduktiController{
     }
     public function update($request, $productName){
         $request['imageLink'] = '../Images/'.$request['imageLink'];
-        $query = $this->db->pdo->prepare('UPDATE produkti SET productLink=:productLink, imageLink=:imageLink, productDescription=:productDescription, productPrice=:productPrice, category=:category WHERE productName=:productName');
-        $query->bindParam(':productLink', $request['productLink']);
+        $query = $this->db->pdo->prepare('UPDATE produkti SET imageLink=:imageLink, productDescription=:productDescription, productPrice=:productPrice, category=:category WHERE productName=:productName');
         $query->bindParam(':imageLink', $request['imageLink']);
         $query->bindParam(':productDescription', $request['productDescription']);
         $query->bindParam(':productPrice', $request['productPrice']);

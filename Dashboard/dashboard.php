@@ -35,9 +35,9 @@ $allProducts = $produktet->readData();?>
             </table>
             <table id="productTable">
                 <tr><td colspan="6" id="productHeader">Product Table</td></tr>
-                <tr><th>Product_Name</th><th>Product_Price</th><th>Product_Category</th></tr>
+                <tr><th>ID</th><th>Product_Name</th><th>Product_Price</th><th>Product_Category</th></tr>
                 <?php foreach($allProducts as $product){
-                    $productString = new Produkti($product['productLink'], $product['imageLink'], $product['productName'], $product['productDescription'], $product['productPrice'], $product['category']);
+                    $productString = new Produkti($product['indicator'], $product['imageLink'], $product['productName'], $product['productDescription'], $product['productPrice'], $product['category']);
                     
                     echo $productString->writeProduct();
                 }

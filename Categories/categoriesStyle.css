@@ -78,6 +78,10 @@ a{
 #prodDesc h4{
     color: #4b4a4a;
     line-height:100%;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     margin:0;
     margin-bottom: 2%;
 }
