@@ -10,7 +10,7 @@
 
         public function readData(){
             $query = $this->db->pdo->query('SELECT * FROM user');
-            return $query->fetchAll();
+            return $query->fetchAll();      
         }
         public function insert($request){
             try{

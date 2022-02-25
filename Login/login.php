@@ -8,16 +8,14 @@
     <?php include '../header/header.php'?>
     <div id="mainPage">
     <div id="korniza">
-        <form class="box" action="#" method="post">
+        <form class="box" action="loginValidation.php" method="post">
             <h1>Log In</h1>
     
-            <input type="email" required autocomplete="off" id="email" placeholder="E-mail">
-            <input type="password" required autocomplete="off" id="password" placeholder="Password">
+            <input type="email" required autocomplete="off" id="email" name="email" placeholder="E-mail">
+            <input type="password" required autocomplete="off" id="password" name="password" placeholder="Password">
             <p id="showId" onclick="show()">Show Password</p>
 
-            <button id="loginButton">
-                    <div><b>Log in</b></div>
-            </button>
+            <input type="submit" id="loginButton" name="loginButton" value="Log in">
 
             <div id="forgotField">
                 <a href="" id="forgotPassword">Forgot Password?</a>

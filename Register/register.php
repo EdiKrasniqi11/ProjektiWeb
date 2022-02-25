@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
     <?php include '../header/header.php'?>
     <div id="mainPage">
     <div id="korniza">
-        <form class="box" method="POST">
+        <form class="box" method="POST" action="RegisterValidation.php">
             <h1>Register</h1>
 
             <div class="nameClass">

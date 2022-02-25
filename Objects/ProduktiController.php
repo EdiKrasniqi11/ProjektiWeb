@@ -43,9 +43,11 @@ class ProduktiController{
     }
     public function delete($productName){
         $query = $this->db->pdo->prepare('DELETE from produkti WHERE productName = :productName');
+        $query2 = $this->db->pdo->query('ALTER TABLE produkti AUTO_INCREMENT = 1');
         $query->bindParam(':productName', $productName);
         $query->execute();
-        header("Location: dashboard.php");
+        $query2->execute();
+        header("Location: ../Dashboard/dashboard.php");
     }
 }
 ?>

@@ -18,16 +18,16 @@ class Produkti{
 
     public function writeProduct(){
         return "<tr><td>".$this->indicator."</td><td>".$this->productName."</td><td>".$this->price."$</td><td>".$this->category."</td>
-        <td><a href=\"../ProductManagement/editProduct.php?id=".$this->productName."\" id=\"editButton\">Edit</a></td><td><a href=\"deleteProduct.php?id=".$this->productName."\" id=\"deleteButton\">Delete</a></td><tr>";
+        <td><a href=\"../ProductManagement/editProduct.php?id=".$this->productName."\" id=\"editButton\">Edit</a></td><td><a href=\"../ProductManagement/deleteProduct.php?id=".$this->productName."\" id=\"deleteButton\">Delete</a></td><tr>";
     }
     public function __toString(){
         return "<div class=\"product\" id=\"".$this->category."\">
-                    <a href=\"../HomePage/index.php\"><img src=".$this->imageLink." ></a>
+                    <a href=\"../ProductPage/productPage.php?id=".$this->productName."\"><img src=".$this->imageLink." ></a>
                     <div id=\"prodDesc\">
                         <div id=\"prodCart\">
-                        <img src=\"../Images/favProd.png\" class=\"Wish\" onclick=\"function{}\">
-                        <img src=\"../Images/cartProd.png\" class=\"Cart\" onclick=\"carted()\">
-                        </div><a href=\"../HomePage/index.php\">
+                        <a href=\"../Wishlist/addToWishlist.php?id=".$this->productName."\"><img src=\"../Images/favProd.png\" class=\"Wish\"><a>
+                        <a href=\"../Cart/addToCart.php?id=".$this->productName."\"><img src=\"../Images/cartProd.png\" class=\"Cart\"></a>
+                        </div><a href=\"../ProductPage/productPage.php?id=".$this->productName."\">
                         <div id=\"prodName\">
                             <h4>$this->productName</h4>
                         </div>

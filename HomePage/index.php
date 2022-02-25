@@ -1,4 +1,11 @@
 <?php include '../config.php' ?>
+<?php require_once('../Objects/ProduktiController.php');
+$produkti = new ProduktiController;
+$allProducts = $produkti->readData();
+if(!isset($_SESSION)){
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +18,12 @@
         <h2>TRENDING PRODUCTS</h2>
         <h4>See What others are buying</h4>
         <ul id="listaTrending">
-            <li><a href="..\ProductPage\ps5.php"><img src="..\Images\PS5.jpg" alt="image" id="trendingPhoto1"></a></li>
-            <li><a href="..\ProductPage\macBook.php"><img src="..\Images\Laptop.jpg" alt="image" id="trendingPhoto2"></a></li>
-            <li><a href="..\ProductPage\beats.php"><img src="..\Images\Headphones.jpg" alt="image" id="trendingPhoto3"></a></li>
-            <li><a href="..\ProductPage\tv.php"><img src="..\Images\TV.jpg" alt="image" id="trendingPhoto4"></a></li>
+            <?php
+                $slicedArray = array_slice($allProducts,0,4);
+                foreach($slicedArray as $product){
+                    echo '<li><a href="../ProductPage/productPage.php?id='.$product['productName'].'"><img src="'.$product['imageLink'].'" alt="image" id="trendingPhoto"></a></li>';
+                }
+            ?>
         </ul>
     </div>
     <div name="darkAquaDiv" id="darkAquaDiv">

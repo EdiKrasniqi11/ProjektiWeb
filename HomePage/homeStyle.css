@@ -20,25 +20,7 @@
     justify-content: center;
     justify-content: space-evenly;
 }
-#trendingPhoto1{
-    height: 150%;
-    width: 90%;
-    border:2px solid #436c70;
-    border-radius: 50%;
-}
-#trendingPhoto2{
-    height: 150%;
-    width: 90%;
-    border:2px solid #436c70;
-    border-radius: 50%;
-}
-#trendingPhoto3{
-    height: 150%;
-    width: 90%;
-    border:2px solid #436c70;
-    border-radius: 50%;
-}
-#trendingPhoto4{
+#trendingPhoto{
     height: 150%;
     width: 90%;
     border:2px solid #436c70;

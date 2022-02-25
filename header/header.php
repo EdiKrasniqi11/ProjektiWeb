@@ -75,8 +75,14 @@
         <a href="..\Categories\categories.php" id="button">Categories</a>
         <a href="..\Cart\cart.php" id="button">Cart</a>
         <a href="..\Wishlist\wishlist.php" id="button">Wishlist</a>
-        <a href="..\Login\login.php" id="button">Login/Register</a>
+        <?php if(isset($_SESSION['aktiv']) && $_SESSION['aktiv']==true){?>
+            <a href="..\Login\logout.php" id="button">Logout</a>
+        <?php }else{?>
+            <a href="..\Login\login.php" id="button">Login/Register</a>
+        <?php }?>
+        <?php if(isset($_SESSION['roli']) && $_SESSION['roli']==1){?>
         <a href="..\Dashboard\dashboard.php" id="button">Dashboard</a>
+        <?php }?>
         <input type="text" id="search" placeholder="Search">
     </div>
 </div>
