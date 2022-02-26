@@ -6,5 +6,5 @@ if(isset($_GET['id'])){
 }
 $cart = new CartController;
 $cart->delete($productName);
-header('Location: cart.php');
+header('Location:'.$_SERVER['HTTP_REFERER']);
 ?>

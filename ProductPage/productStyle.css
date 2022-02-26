@@ -4,8 +4,8 @@
 }
 #productDiv{
     display: flex;
-    min-height:60vh;
-    padding: 2% 0% 0% 2%;
+    max-height:65vh;
+    padding: 2% 0% 2% 2%;
     background-color:#F2F2F2;
 }
 #productImage{
@@ -33,6 +33,7 @@
 }
 #cartButton{
     height: 58px;
+    width: 204px;
     border-radius: 5px;
     padding: 15px 30px 15px 30px;
     background-color:#0384c0;
@@ -81,12 +82,12 @@
 }
 #reviewSection{
     margin-top: 0.8%;
-    height:75px;
+    margin-bottom: 0.8%;
+    height:25px;
     width:95%;
     resize:none;
-    font-size: 125%;
-    padding-top: 0.3%;
-    padding-left: 0.4%;
+    font-size: 100%;
+    padding: 0.5% 0.6% 0.5% 0.5%
 
 }
 #postButton{
@@ -97,14 +98,21 @@
     border:none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight:bold;
 }
 #postButton:hover{
     color:#F2F2F2;
 }
-#firstReview{
-    margin-top:40px;
-    height:80px;
-    width:1405px;
-    background-color: #b9b9b9;
-    font-family: monospace;
+#review{
+    width: 95%;
+    border: 1px solid rgb(49, 49, 49);
+    padding: 0.5% 0% 0.5% 0.5%;
+}
+#reviewDate{
+    font-size: smaller;
+    color: #a0a0a0;
+}
+#deleteReview{
+    text-decoration: none;
+    color: red;
 }

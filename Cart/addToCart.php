@@ -10,8 +10,7 @@ if(!isset($_SESSION['user'])){
     try{
         $cart->insert($productName);
         
-        echo '<script>alert("Item successfully added to Cart!");
-        window.location.href="../Cart/cart.php";</script>';
+        header('Location:'.$_SERVER['HTTP_REFERER']);
     }catch(PDOException $pdoe){
         echo '<script>alert("Item is already in your Cart!");
         window.location.href="../Categories/categories.php";</script>';

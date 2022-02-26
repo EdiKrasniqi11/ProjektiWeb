@@ -10,8 +10,7 @@ if(!isset($_SESSION['user'])){
     try{
         $wishlist->insert($productName);
         
-        echo '<script>alert("Item successfully added to Wishlist!");
-        window.location.href="../Wishlist/wishlist.php";</script>';
+        header('Location: '.$_SERVER['HTTP_REFERER']);
     }catch(PDOException $pdoe){
         echo '<script>alert("Item is already in your Wishlist!");
         window.location.href="../Categories/categories.php";</script>';

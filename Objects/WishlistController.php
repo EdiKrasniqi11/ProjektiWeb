@@ -28,5 +28,15 @@
             $query = $this->db->pdo->query('SELECT * FROM wishlist');
             return $query->fetchAll();
         }
+        public function exists($productName){
+            $allData = $this->readData();
+
+            foreach($allData as $product){
+                if($product['productName'] == $productName){
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 ?>

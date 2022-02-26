@@ -28,5 +28,14 @@
             $query = $this->db->pdo->query('SELECT * FROM cart');
             return $query->fetchAll();
         }
+        public function exists($productName){
+            $allProducts = $this->readData();
+            foreach($allProducts as $product){
+                if($product['productName'] == $productName){
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 ?>

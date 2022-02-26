@@ -1,4 +1,6 @@
 <?php
+require_once ('CartController.php');
+require_once ('WishlistController.php');
 class Produkti{
     public $indicator;
     public $imageLink;
@@ -21,12 +23,28 @@ class Produkti{
         <td><a href=\"../ProductManagement/editProduct.php?id=".$this->productName."\" id=\"editButton\">Edit</a></td><td><a href=\"../ProductManagement/deleteProduct.php?id=".$this->productName."\" id=\"deleteButton\">Delete</a></td><tr>";
     }
     public function __toString(){
+        $wishlist = new WishlistController;
+        $cart = new CartController;
+        if($wishlist->exists($this->productName)){
+            $favImage = '../Images/favFillProd.png';
+            $favLink = '../Wishlist/deleteFromWishlist.php';
+        }else{
+            $favImage = '../Images/favProd.png';
+            $favLink = '../Wishlist/addToWishlist.php';
+        }
+        if($cart->exists($this->productName)){
+            $cartImage = '../Images/cartFillProd.png';
+            $cartLink = '../Cart/deleteFromCart.php';
+        }else{
+            $cartImage = '../Images/cartProd.png';
+            $cartLink = '../Cart/addToCart.php';
+        }
         return "<div class=\"product\" id=\"".$this->category."\">
                     <a href=\"../ProductPage/productPage.php?id=".$this->productName."\"><img src=".$this->imageLink." ></a>
                     <div id=\"prodDesc\">
                         <div id=\"prodCart\">
-                        <a href=\"../Wishlist/addToWishlist.php?id=".$this->productName."\"><img src=\"../Images/favProd.png\" class=\"Wish\"><a>
-                        <a href=\"../Cart/addToCart.php?id=".$this->productName."\"><img src=\"../Images/cartProd.png\" class=\"Cart\"></a>
+                        <a href=\"".$favLink."?id=".$this->productName."\"><img src=\"".$favImage."\" class=\"Wish\"><a>
+                        <a href=\"".$cartLink."?id=".$this->productName."\"><img src=\"".$cartImage."\" class=\"Cart\"></a>
                         </div><a href=\"../ProductPage/productPage.php?id=".$this->productName."\">
                         <div id=\"prodName\">
                             <h4>$this->productName</h4>

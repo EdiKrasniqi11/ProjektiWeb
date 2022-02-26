@@ -25,7 +25,7 @@
                 $query->bindParam(':userPassword', $request['userPassword']);
                 
                 $query->execute();
-                header('Location: ../HomePage/index.php');
+                header('Location: ../Login/login.php');
             }catch(PDOException){
                 echo "<script>alert(\"This email is already in use\");</script>";
             }

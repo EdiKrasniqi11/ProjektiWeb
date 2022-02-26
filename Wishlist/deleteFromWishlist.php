@@ -6,5 +6,5 @@ if(isset($_GET['id'])){
 }
 $wishlist = new WishlistController;
 $wishlist->delete($productName);
-header('Location: wishlist.php');
+header('Location: '.$_SERVER['HTTP_REFERER']);
 ?>
